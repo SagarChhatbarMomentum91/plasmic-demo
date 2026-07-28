@@ -242,6 +242,8 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"menuItem"}
             data-plasmic-override={overrides.menuItem}
             className={classNames("__wab_instance", sty.menuItem)}
+            label={"Item 112344"}
+            value={"HELLO"}
           />
         </div>
       </div>
