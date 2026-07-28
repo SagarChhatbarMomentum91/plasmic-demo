@@ -2,10 +2,12 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import {
-  PlasmicHomepage,
+  PlasmicHomepage
+} from "./plasmic/cms_starter/PlasmicHomepage";
+import type {
   DefaultHomepageProps
 } from "./plasmic/cms_starter/PlasmicHomepage";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import type { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
