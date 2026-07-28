@@ -1,0 +1,80 @@
+.ariaSwitch:global(.__wab_instance) {
+  object-fit: cover;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  color: var(--token-a-oFqAaZ1o8_);
+  font-family: var(--token-IUFa6K215Spz);
+  font-size: var(--token-5kw2mPyJf-Up);
+  line-height: var(--token-wOzBazBi274r);
+  width: 100%;
+  flex-direction: column;
+  row-gap: var(--token-jxveW-ZKQ0qQ);
+  min-width: 0;
+}
+.ariaSwitch[data-disabled][data-disabled]:global(.__wab_instance) {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.ariaSwitch[data-readonly][data-readonly]:global(.__wab_instance) {
+  pointer-events: none;
+  cursor: default;
+}
+.freeBox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: var(--token-MWRf1R43p22z);
+}
+.switchIndicator {
+  height: auto;
+  width: var(--token-6q2L4JObMaIY);
+  display: flex;
+  background: var(--token-2R2jPLrt0nvU);
+  cursor: pointer;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 99px;
+  padding: var(--token-yNEAzI4_mHh7);
+}
+.ariaSwitch[data-selected] .switchIndicator {
+  background: var(--token-KrKJ5adBWhob);
+}
+.ariaSwitch[data-focus-visible] .switchIndicator {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--token-KrKJ5adBWhob);
+  outline-offset: 1px;
+}
+.ariaSwitch[data-disabled] .switchIndicator {
+  cursor: not-allowed;
+}
+.thumb {
+  display: flex;
+  position: relative;
+  width: var(--token-dq4YVuQT4SQc);
+  background: var(--token-ruQk_K2EmS3K);
+  height: var(--token-dq4YVuQT4SQc);
+  flex-direction: row;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  transform: skew(0deg, 0deg);
+  box-shadow: 0px 0px 3px 0px #00000040;
+  flex-shrink: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.1s;
+  border-radius: 99px;
+}
+.ariaSwitch[data-selected] .thumb {
+  transform: translate3d(12px, 0px, 0px);
+}
+.description:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
