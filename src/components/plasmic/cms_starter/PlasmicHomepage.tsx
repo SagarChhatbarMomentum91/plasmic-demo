@@ -122,6 +122,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   dragDropList?: Flex__<typeof DragDropList>;
+  text?: Flex__<"div">;
   menuItem?: Flex__<typeof MenuItem>;
 };
 
@@ -238,13 +239,29 @@ function PlasmicHomepage__RenderFunc(props: {
             title={"Top Buildings"}
           />
 
-          <MenuItem
-            data-plasmic-name={"menuItem"}
-            data-plasmic-override={overrides.menuItem}
-            className={classNames("__wab_instance", sty.menuItem)}
-            label={"Item 112344"}
-            value={"HELLO"}
-          />
+          <div
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
+            className={classNames("all", "__wab_text", sty.text)}
+          >
+            {"SAgar demo testing text testing to demo test"}
+          </div>
+          {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
+            2, 3, 4
+          ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+            const currentItem = __plasmic_item_0;
+            const currentIndex = __plasmic_idx_0;
+            return (
+              <MenuItem
+                data-plasmic-name={"menuItem"}
+                data-plasmic-override={overrides.menuItem}
+                className={classNames("__wab_instance", sty.menuItem)}
+                key={currentIndex}
+                label={"Item 112344"}
+                value={"HELLO"}
+              />
+            );
+          })}
         </div>
       </div>
     </React.Fragment>
@@ -252,8 +269,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dragDropList", "menuItem"],
+  root: ["root", "dragDropList", "text", "menuItem"],
   dragDropList: ["dragDropList"],
+  text: ["text"],
   menuItem: ["menuItem"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -262,6 +280,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   dragDropList: typeof DragDropList;
+  text: "div";
   menuItem: typeof MenuItem;
 };
 
@@ -328,6 +347,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     dragDropList: makeNodeComponent("dragDropList"),
+    text: makeNodeComponent("text"),
     menuItem: makeNodeComponent("menuItem"),
 
     // Metadata about props expected for PlasmicHomepage
