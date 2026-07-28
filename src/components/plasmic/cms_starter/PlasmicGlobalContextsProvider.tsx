@@ -16,6 +16,7 @@ export interface GlobalContextsProviderProps {
   sanityCredentialsProviderProps?: Partial<
     Omit<React.ComponentProps<typeof SanityCredentialsProvider>, "children">
   >;
+
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;

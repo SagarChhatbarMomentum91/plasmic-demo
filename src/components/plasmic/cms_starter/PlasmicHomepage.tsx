@@ -65,6 +65,7 @@ import type {
 import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources";
 
 import { DragDropList } from "../../../../components/DragDropList"; // plasmic-import: FR1u7UyF3RIp/codeComponent
+import MenuItem from "../../MenuItem"; // plasmic-import: M-9TTdm_35ff/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: uYKQgQgWR9Ex8gMHqRFTud/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: uYKQgQgWR9Ex8gMHqRFTud/styleTokensProvider
@@ -121,6 +122,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   dragDropList?: Flex__<typeof DragDropList>;
+  menuItem?: Flex__<typeof MenuItem>;
 };
 
 export interface DefaultHomepageProps {
@@ -235,6 +237,12 @@ function PlasmicHomepage__RenderFunc(props: {
             showSearch={true}
             title={"Top Buildings"}
           />
+
+          <MenuItem
+            data-plasmic-name={"menuItem"}
+            data-plasmic-override={overrides.menuItem}
+            className={classNames("__wab_instance", sty.menuItem)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -242,8 +250,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dragDropList"],
-  dragDropList: ["dragDropList"]
+  root: ["root", "dragDropList", "menuItem"],
+  dragDropList: ["dragDropList"],
+  menuItem: ["menuItem"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -251,6 +260,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   dragDropList: typeof DragDropList;
+  menuItem: typeof MenuItem;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -316,6 +326,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     dragDropList: makeNodeComponent("dragDropList"),
+    menuItem: makeNodeComponent("menuItem"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
